@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###",
+    "###",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "modernlife:bullet"
+    }
+  },
+  "result": {
+    "item": "modernlife:extended_gun_magazine",
+    "count": 1
+  }
+}

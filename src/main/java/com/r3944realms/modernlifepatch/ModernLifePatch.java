@@ -10,7 +10,7 @@ import static com.r3944realms.modernlifepatch.ModernLifePatch.MOD_ID;
 public class ModernLifePatch {
     public static final String MOD_ID = "modernlifepatch";
     public static final Logger logger = LoggerFactory.getLogger(ModernLifePatch.class);
-    ModernLifePatch() {
+    public ModernLifePatch() {
         logger.info("ModernLifePatch loaded");
     }
 }

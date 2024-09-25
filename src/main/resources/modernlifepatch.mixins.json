@@ -2,7 +2,7 @@
   "required": true,
   "package": "com.r3944realms.modernlifepatch.mixin",
   "compatibilityLevel": "JAVA_17",
-  "refmap": "imodhelper.refmap.json",
+  "refmap": "modernlifepatch.refmap.json",
   "mixins": [
     "block.bathroom.MixinShowerHead",
     "block.bathroom.MixinToilet",

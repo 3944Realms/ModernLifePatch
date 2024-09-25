@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "modernlife:bullet"
+    },
+    {
+      "item": "modernlife:bullet"
+    },
+    {
+      "item": "modernlife:bullet"
+    },
+    {
+      "item": "modernlife:bullet"
+    },
+    {
+      "item": "modernlife:bullet"
+    },
+    {
+      "item": "modernlife:bullet"
+    }
+  ],
+  "result": {
+    "item": "modernlife:bullet_strip",
+    "count": 1
+  }
+}
