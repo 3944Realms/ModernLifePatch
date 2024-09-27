@@ -27,14 +27,19 @@ displayName="Modern Life Patch" #mandatory
 # A URL for the "homepage" for this mod, displayed in the mod UI
 #displayURL="https://change.me.to.your.mods.homepage.example.invalid/" #optional
 # A file name (in the root of the mod JAR) containing a logo for display
-#logoFile="examplemod.png" #optional
+
+logoFile="mod-logo.png" #optional
 # A text field displayed in the mod UI
-#credits="Thanks for this example mod goes to Java" #optional
+credits="""
+All of tetxures and models are created by BF_Meow，Do not use for other purposes without permission.
+所有材质和模型均由 白帆小喵BF_Meow 绘制。未经允许，请勿用作他用。
+""" #optional
 # A text field displayed in the mod UI
-authors="R3944Realms" #optional
+authors="R3944Realms, BF_Meow" #optional
 # The description text for the mod (multi line!) (#mandatory)
 description='''
-Just a patch
+A patch was made due to too many flaws in the original author's graphic design.
+因为原作者的美工槽点太多，而做的一个补丁。
 '''
 # A dependency - use the . to indicate dependency for a specific modid. Dependencies are optional.
 [[dependencies.modernlifepatch]] #optional
