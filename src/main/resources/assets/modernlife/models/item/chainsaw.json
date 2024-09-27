@@ -1,0 +1,6 @@
+{
+    "overrides": [
+        { "predicate": { "modernlife:running": 0.0 }, "model": "modernlife:item/chainsaw_off" },
+        { "predicate": { "modernlife:running": 1.0 }, "model": "modernlife:item/chainsaw_on" }
+    ]
+}

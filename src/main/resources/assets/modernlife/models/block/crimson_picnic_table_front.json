@@ -1,0 +1,7 @@
+{
+	"parent": "modernlife:block/picnic_table_front",
+	"textures": {
+		"0": "block/crimson_planks",
+		"particle": "block/crimson_planks"
+	}
+}

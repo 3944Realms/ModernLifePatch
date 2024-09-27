@@ -1,0 +1,7 @@
+{
+  "parent": "modernlife:block/door_bottom_rh",
+  "textures": {
+    "top": "modernlife:block/warped_glass_door_top",
+    "bottom": "modernlife:block/warped_glass_door_bottom"
+  }
+}

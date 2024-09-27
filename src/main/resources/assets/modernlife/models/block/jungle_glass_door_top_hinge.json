@@ -1,0 +1,7 @@
+{
+  "parent": "modernlife:block/door_top_rh",
+  "textures": {
+    "top": "modernlife:block/jungle_glass_door_top",
+    "bottom": "minecraft:block/jungle_door_bottom"
+  }
+}

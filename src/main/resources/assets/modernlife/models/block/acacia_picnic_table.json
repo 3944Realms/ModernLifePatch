@@ -1,0 +1,7 @@
+{
+	"parent": "modernlife:block/picnic_table",
+	"textures": {
+		"0": "block/acacia_planks",
+		"particle": "block/acacia_planks"
+	}
+}

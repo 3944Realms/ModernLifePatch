@@ -1,0 +1,7 @@
+{
+	"parent": "modernlife:block/small_table_end",
+	"textures": {
+		"0": "block/crimson_planks",
+		"particle": "block/crimson_planks"
+	}
+}

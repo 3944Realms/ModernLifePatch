@@ -1,0 +1,7 @@
+{
+  "parent": "modernlife:block/door_top",
+  "textures": {
+    "top": "modernlife:block/acacia_glass_door_top",
+    "bottom": "modernlife:block/acacia_glass_door_bottom"
+  }
+}

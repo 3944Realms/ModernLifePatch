@@ -1,0 +1,7 @@
+{
+	"parent": "modernlife:block/small_table_mid",
+	"textures": {
+		"0": "block/oak_planks",
+		"particle": "block/oak_planks"
+	}
+}

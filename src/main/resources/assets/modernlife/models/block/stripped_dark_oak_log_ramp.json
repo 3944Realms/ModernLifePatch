@@ -1,0 +1,7 @@
+{
+	"parent": "modernlife:block/ramp",
+	"textures": {
+		"1": "block/stripped_dark_oak_log",
+		"particle": "block/stripped_dark_oak_log"
+	}
+}
