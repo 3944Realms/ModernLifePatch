@@ -1,12 +1,11 @@
 package com.r3944realms.modernlifepatch;
 
 import com.dairymoose.modernlife.core.CustomBlocks;
-import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.packs.repository.Pack;
 import net.minecraft.server.packs.repository.PackSource;
-import net.minecraft.server.packs.repository.RepositorySource;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.event.AddPackFindersEvent;
@@ -46,15 +45,15 @@ public abstract class EventHandler {
                 IModFile modFile = ModList.get().getModFileById(ModernLifePatch.MOD_ID).getFile();
                 Path modFilePath = modFile.findResource("resourcepacks/new_modern_life");
                 event.addRepositorySource((consumer, packConstructor) -> {
-                    Pack t = Pack.create(
-                            ModernLifePatch.MOD_ID,
+                    Pack pack = Pack.create(
+                            new ResourceLocation(ModernLifePatch.MOD_ID, "new_modern_life").toString(),
                             true,
                             () -> new PathResourcePack(ModernLifePatch.MOD_ID, modFilePath),
                             packConstructor,
                             Pack.Position.TOP,
                             PackSource.BUILT_IN
                     );
-                    if(t != null) consumer.accept(t);
+                    if(pack != null) consumer.accept(pack);
                 });
         }
     }

@@ -1,0 +1,7 @@
+{
+	"parent": "modernlife:block/ramp_corner",
+	"textures": {
+		"1": "block/mossy_cobblestone",
+		"particle": "block/mossy_cobblestone"
+	}
+}

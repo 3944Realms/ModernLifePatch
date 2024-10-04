@@ -1,0 +1,7 @@
+{
+  "parent": "modernlife:block/door_bottom",
+  "textures": {
+    "top": "modernlife:block/spruce_glass_door_top",
+    "bottom": "minecraft:block/spruce_door_bottom"
+  }
+}

@@ -1,0 +1,7 @@
+{
+	"parent": "modernlife:block/ramp",
+	"textures": {
+		"1": "block/jungle_log",
+		"particle": "block/jungle_log"
+	}
+}

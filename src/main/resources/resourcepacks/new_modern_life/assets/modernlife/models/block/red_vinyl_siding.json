@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "modernlife:block/red_vinyl_siding"
+  }
+}

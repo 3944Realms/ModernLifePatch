@@ -1,0 +1,138 @@
+{
+	"credit": "Made with Blockbench",
+	"textures": {
+		"0": "modernlife:block/oak_planks_deck",
+		"particle": "block/oak_planks"
+	},
+	"elements": [
+		{
+			"from": [2.5, 13.5, 0],
+			"to": [5.5, 15.5, 16],
+			"rotation": {"angle": 0, "axis": "y", "origin": [1, 0, 0]},
+			"faces": {
+				"north": {"uv": [0, 5, 16, 8], "rotation": 270, "texture": "#0"},
+				"east": {"uv": [0, 5, 16, 8], "rotation": 90, "texture": "#0"},
+				"south": {"uv": [0, 5, 16, 8], "rotation": 90, "texture": "#0"},
+				"west": {"uv": [0, 5, 16, 8], "rotation": 90, "texture": "#0"},
+				"up": {"uv": [0, 5, 16, 8], "rotation": 90, "texture": "#0"},
+				"down": {"uv": [0, 5, 16, 8], "rotation": 90, "texture": "#0"}
+			}
+		},
+		{
+			"from": [10.5, 13.5, 0],
+			"to": [13.5, 15.5, 16],
+			"rotation": {"angle": 0, "axis": "y", "origin": [-2, 0, 0]},
+			"faces": {
+				"north": {"uv": [0, 13, 16, 16], "rotation": 270, "texture": "#0"},
+				"east": {"uv": [0, 13, 16, 16], "rotation": 90, "texture": "#0"},
+				"south": {"uv": [0, 13, 16, 16], "rotation": 90, "texture": "#0"},
+				"west": {"uv": [0, 13, 16, 16], "rotation": 90, "texture": "#0"},
+				"up": {"uv": [0, 13, 16, 16], "rotation": 90, "texture": "#0"},
+				"down": {"uv": [0, 13, 16, 16], "rotation": 90, "texture": "#0"}
+			}
+		},
+		{
+			"from": [0, 14, 0.5],
+			"to": [16, 16, 3.5],
+			"faces": {
+				"north": {"uv": [0, 1, 16, 4], "texture": "#0"},
+				"east": {"uv": [0, 1, 16, 4], "rotation": 90, "texture": "#0"},
+				"south": {"uv": [0, 1, 16, 4], "texture": "#0"},
+				"west": {"uv": [0, 1, 16, 4], "rotation": 270, "texture": "#0"},
+				"up": {"uv": [0, 1, 16, 4], "texture": "#0"},
+				"down": {"uv": [0, 1, 16, 4], "rotation": 180, "texture": "#0"}
+			}
+		},
+		{
+			"from": [0, 14, 4.5],
+			"to": [16, 16, 7.5],
+			"faces": {
+				"north": {"uv": [0, 5, 16, 8], "texture": "#0"},
+				"east": {"uv": [0, 5, 16, 8], "rotation": 90, "texture": "#0"},
+				"south": {"uv": [0, 5, 16, 8], "texture": "#0"},
+				"west": {"uv": [0, 5, 16, 8], "rotation": 270, "texture": "#0"},
+				"up": {"uv": [0, 5, 16, 8], "texture": "#0"},
+				"down": {"uv": [0, 5, 16, 8], "rotation": 180, "texture": "#0"}
+			}
+		},
+		{
+			"from": [0, 14, 8.5],
+			"to": [16, 16, 11.5],
+			"faces": {
+				"north": {"uv": [0, 9, 16, 12], "texture": "#0"},
+				"east": {"uv": [0, 9, 16, 12], "rotation": 90, "texture": "#0"},
+				"south": {"uv": [0, 9, 16, 12], "texture": "#0"},
+				"west": {"uv": [0, 9, 16, 12], "rotation": 270, "texture": "#0"},
+				"up": {"uv": [0, 9, 16, 12], "texture": "#0"},
+				"down": {"uv": [0, 9, 16, 12], "rotation": 180, "texture": "#0"}
+			}
+		},
+		{
+			"from": [0, 14, 12.5],
+			"to": [16, 16, 15.5],
+			"faces": {
+				"north": {"uv": [0, 13, 16, 16], "texture": "#0"},
+				"east": {"uv": [0, 13, 16, 16], "rotation": 90, "texture": "#0"},
+				"south": {"uv": [0, 13, 16, 16], "texture": "#0"},
+				"west": {"uv": [0, 13, 16, 16], "rotation": 270, "texture": "#0"},
+				"up": {"uv": [0, 13, 16, 16], "texture": "#0"},
+				"down": {"uv": [0, 13, 16, 16], "rotation": 180, "texture": "#0"}
+			}
+		}
+	],
+	"display": {
+		"thirdperson_righthand": {
+			"translation": [0, -3.5, 1],
+			"scale": [0.55, 0.55, 0.55]
+		},
+		"thirdperson_lefthand": {
+			"translation": [0, -3.5, 1],
+			"scale": [0.55, 0.55, 0.55]
+		},
+		"firstperson_righthand": {
+			"rotation": [0, -90, 63],
+			"translation": [-0.5, -0.75, 5.25],
+			"scale": [0.68, 0.68, 0.68]
+		},
+		"firstperson_lefthand": {
+			"rotation": [0, -90, 63],
+			"translation": [-0.5, -0.75, 5.25],
+			"scale": [0.68, 0.68, 0.68]
+		},
+		"ground": {
+			"translation": [0, 2, 0],
+			"scale": [0.5, 0.5, 0.5]
+		},
+		"gui": {
+			"rotation": [30, 30, 0],
+			"translation": [0, -3.75, 0],
+			"scale": [0.65, 0.65, 0.65]
+		},
+		"head": {
+			"rotation": [0, 180, 0],
+			"translation": [0, 13, 7]
+		},
+		"fixed": {
+			"rotation": [-90, 0, 0],
+			"translation": [0, 0, 6]
+		}
+	},
+	"groups": [
+		{
+			"name": "upper",
+			"origin": [0, 0, 0],
+			"children": [
+				{
+					"name": "bottom_planks",
+					"origin": [0, 0, 0],
+					"children": [0, 1]
+				},
+				{
+					"name": "top_planks",
+					"origin": [0, 0, 0],
+					"children": [2, 3, 4, 5]
+				}
+			]
+		}
+	]
+}

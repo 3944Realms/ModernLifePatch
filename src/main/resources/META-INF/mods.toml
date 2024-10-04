@@ -28,14 +28,14 @@ displayName="Modern Life Patch" #mandatory
 #displayURL="https://change.me.to.your.mods.homepage.example.invalid/" #optional
 # A file name (in the root of the mod JAR) containing a logo for display
 
-logoFile= "../resourcepacks/new_modern_life/modernlife/mod-logo.png" #optional
+logoFile= "mod-logo.png" #optional
 # A text field displayed in the mod UI
 credits="""
-All of tetxures and models are created by BF_Meow，Do not use for other purposes without permission.
+All of tetxures and models are created by BF_Meow_，Do not use for other purposes without permission.
 所有材质和模型均由 白帆小喵BF_Meow 绘制。未经允许，请勿用作他用。
 """ #optional
 # A text field displayed in the mod UI
-authors="R3944Realms, BF_Meow" #optional
+authors="R3944Realms, BF_Meow_" #optional
 # The description text for the mod (multi line!) (#mandatory)
 description='''
 A patch was made due to too many flaws in the original author's graphic design.

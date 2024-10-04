@@ -1,0 +1,7 @@
+{
+	"parent": "modernlife:block/barrier",
+	"textures": {
+		"0": "block/clay",
+		"particle": "block/clay"
+	}
+}

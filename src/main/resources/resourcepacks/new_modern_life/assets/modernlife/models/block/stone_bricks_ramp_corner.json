@@ -1,0 +1,7 @@
+{
+	"parent": "modernlife:block/ramp_corner",
+	"textures": {
+		"1": "block/stone_bricks",
+		"particle": "block/stone_bricks"
+	}
+}

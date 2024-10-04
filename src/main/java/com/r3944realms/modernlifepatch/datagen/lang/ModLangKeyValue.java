@@ -5,7 +5,8 @@ import com.r3944realms.modernlifepatch.utils.Enum.LanguageEnum;
 import com.r3944realms.modernlifepatch.utils.String.StringValidator;
 
 public enum ModLangKeyValue {
-    MOD_RESOURCE_DESC(getCustomTextKey("resource_pack", ModernLifePatch.MOD_ID ,"description"), "All of tetxures and models are created by BF_Meow，Do not use for other purposes without permission.", "所有材质和模型均由 白帆小喵BF_Meow 绘制。未经允许，请勿用作他用。"),
+    MOD_RESOURCE_NAME(getCustomTextKey("resource_pack", ModernLifePatch.MOD_ID, "name"), "§b§lModern Life §fExclusive Materials", "§b§l摩登生活 §f专属材质"),
+    MOD_RESOURCE_DESC(getCustomTextKey("resource_pack", ModernLifePatch.MOD_ID ,"description"), "All of textures and models are created by BF_Meow_，Do not use for other purposes without permission.", "所有材质和模型均由 白帆小喵BF_Meow_ 绘制。未经允许，请勿用作他用。"),
 
     POWER_RECEIVER_HOVER_FIRST(getHoverTextKey("power_receiver", "1"), "Receives power on the selected channel from all transmitters", "从所有能量发射器中去接收所选工作频道的能量"),
     POWER_RECEIVER_AND_TRANSMITTER_HOVER_SECOND(getHoverTextKey("power_receiver", "2"), "Right click block to change current channel", "右键方块打开界面，来切换工作频道"),

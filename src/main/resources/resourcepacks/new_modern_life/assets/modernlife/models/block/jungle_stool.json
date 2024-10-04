@@ -1,0 +1,7 @@
+{
+	"parent": "modernlife:block/stool",
+	"textures": {
+		"0": "block/jungle_planks",
+		"particle": "block/jungle_planks"
+	}
+}

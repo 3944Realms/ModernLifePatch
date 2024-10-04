@@ -1,0 +1,7 @@
+{
+	"parent": "modernlife:block/ramp",
+	"textures": {
+		"1": "block/chiseled_polished_blackstone",
+		"particle": "block/chiseled_polished_blackstone"
+	}
+}

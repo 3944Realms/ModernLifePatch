@@ -1,0 +1,7 @@
+{
+	"parent": "modernlife:block/ramp_corner",
+	"textures": {
+		"1": "block/dark_prismarine",
+		"particle": "block/dark_prismarine"
+	}
+}

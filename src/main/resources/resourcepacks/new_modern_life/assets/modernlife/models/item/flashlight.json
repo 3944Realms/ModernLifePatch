@@ -1,0 +1,6 @@
+{
+    "overrides": [
+        { "predicate": { "modernlife:on": 0.0 }, "model": "modernlife:item/flashlight_off" },
+        { "predicate": { "modernlife:on": 1.0 }, "model": "modernlife:item/flashlight_on" }
+    ]
+}
