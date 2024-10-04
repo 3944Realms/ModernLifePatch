@@ -13,4 +13,5 @@ public class ModernLifePatch {
     public ModernLifePatch() {
         logger.info("ModernLifePatch loaded");
     }
+
 }

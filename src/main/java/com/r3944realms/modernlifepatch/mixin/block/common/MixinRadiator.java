@@ -1,6 +1,6 @@
-package com.r3944realms.modernlifepatch.mixin.block.redstone;
+package com.r3944realms.modernlifepatch.mixin.block.common;
 
-import com.dairymoose.modernlife.blocks.ExtractorBlock;
+import com.dairymoose.modernlife.blocks.RadiatorBlock;
 import com.dairymoose.modernlife.util.ModernLifeUtil;
 import com.r3944realms.modernlifepatch.datagen.lang.ModLangKeyValue;
 import net.minecraft.core.BlockPos;
@@ -25,30 +25,42 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 import java.util.List;
 import java.util.stream.Stream;
 
-@Mixin(ExtractorBlock.class)
-public class MixinExtractor {
+import static com.dairymoose.modernlife.blocks.RadiatorBlock.FACING;
+
+@Mixin(RadiatorBlock.class)
+public class MixinRadiator {
     @Unique
     private static final VoxelShape SHAPE_N = Stream.of(
-            Block.box(5, 4, 2, 11, 10, 14),
-            Block.box(3, 2, 14, 13, 12, 17),
-            Block.box(3, 2, -1, 13, 12, 2),
-            Block.box(4, 3, 4, 12, 11, 12)
-    ).reduce((v1, v2) -> Shapes.join(v1, v2, BooleanOp.OR)).get(), SHAPE_E;
+            Block.box(1, 1, 4, 15, 3, 12),
+            Block.box(1, 3, 4, 3, 13, 12),
+            Block.box(4, 3, 4, 6, 13, 12),
+            Block.box(7, 3, 4, 9, 13, 12),
+            Block.box(10, 3, 4, 12, 13, 12),
+            Block.box(13, 3, 4, 15, 13, 12),
+            Block.box(1, 0, 10, 3, 1, 12),
+            Block.box(1, 0, 4, 3, 1, 6),
+            Block.box(13, 0, 10, 15, 1, 12),
+            Block.box(13, 0, 4, 15, 1, 6),
+            Block.box(3, 3, 5, 13, 12, 11)
+    ).reduce((v1, v2) -> Shapes.join(v1, v2, BooleanOp.OR)).get(), SHAPE_E, SHAPE_S, SHAPE_W;
     static {
         SHAPE_E = ModernLifeUtil.RotateVoxelShapeClockwise(SHAPE_N);
+        SHAPE_S = ModernLifeUtil.RotateVoxelShapeClockwise(SHAPE_E);
+        SHAPE_W = ModernLifeUtil.RotateVoxelShapeClockwise(SHAPE_S);
     }
 
-    @Inject(method = "getShape", at = @At("HEAD"), cancellable = true)
-    public void getShape(BlockState blockState, BlockGetter blockGetter, BlockPos blockPos, CollisionContext collisionContext, CallbackInfoReturnable<VoxelShape> cir) {
-        switch (blockState.getValue(ExtractorBlock.FACING)) {
-            case EAST,WEST -> cir.setReturnValue(SHAPE_E);
+    @Inject(method = {"getShape"}, at= @At("HEAD"), cancellable = true)
+    public void getShape(BlockState bs, BlockGetter reader, BlockPos pos, CollisionContext sel, CallbackInfoReturnable<VoxelShape> cir) {
+        switch (bs.getValue(FACING)) {
+            case SOUTH -> cir.setReturnValue(SHAPE_S);
+            case EAST -> cir.setReturnValue(SHAPE_E);
+            case WEST -> cir.setReturnValue(SHAPE_W);
             default -> cir.setReturnValue(SHAPE_N);
         }
     }
     @Inject(method = {"appendHoverText"}, at= @At("HEAD"), cancellable = true)
     public void appendHoverText(ItemStack itemStack, BlockGetter blockReader, List<Component> list, TooltipFlag tooltipFlag, CallbackInfo ci) {
-        list.add(new TranslatableComponent(ModLangKeyValue.EXTRACTOR_HOVER.getKey()));
+        list.add(new TranslatableComponent(ModLangKeyValue.STEAM_RADIATOR_HOVER.getKey()));
         ci.cancel();
     }
-
 }

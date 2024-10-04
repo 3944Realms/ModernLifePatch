@@ -1,8 +1,0 @@
-{
-	"parent": "modernlife:block/coffee_table_mid",
-	"textures": {
-		"0": "block/dark_oak_planks",
-		"1": "block/dark_oak_log",
-		"particle": "block/dark_oak_log"
-	}
-}

@@ -2,7 +2,12 @@ package com.r3944realms.modernlifepatch.mixin.block.redstone;
 
 import com.dairymoose.modernlife.blocks.WinchBlock;
 import com.dairymoose.modernlife.util.ModernLifeUtil;
+import com.r3944realms.modernlifepatch.datagen.lang.ModLangKeyValue;
 import net.minecraft.core.BlockPos;
+import net.minecraft.network.chat.Component;
+import net.minecraft.network.chat.TranslatableComponent;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.EntityBlock;
@@ -16,12 +21,18 @@ import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
+import java.awt.*;
+import java.util.List;
 import java.util.stream.Stream;
 
 @Mixin(WinchBlock.class)
 public abstract class MixinWinch extends FaceAttachedHorizontalDirectionalBlock implements EntityBlock {
+    public MixinWinch(Properties properties) {
+        super(properties);
+    }
     @Unique
     private static final VoxelShape __SHAPE_FLOOR_SOUTH ,_SHAPE_FLOOR_WEST, _SHAPE_FLOOR_NORTH, _SHAPE_FLOOR_EAST, _SHAPE_WALL_SOUTH, _SHAPE_WALL_WEST, _SHAPE_WALL_NORTH, _SHAPE_WALL_EAST, _SHAPE_CEILING_SOUTH, _SHAPE_CEILING_WEST, _SHAPE_CEILING_NORTH, _SHAPE_CEILING_EAST;
     static {
@@ -44,10 +55,6 @@ public abstract class MixinWinch extends FaceAttachedHorizontalDirectionalBlock 
         _SHAPE_CEILING_NORTH = ModernLifeUtil.RotateVoxelShapeClockwise(_SHAPE_CEILING_WEST);
         _SHAPE_CEILING_EAST = ModernLifeUtil.RotateVoxelShapeClockwise(_SHAPE_CEILING_NORTH);
     }
-    public MixinWinch(Properties p_53182_) {
-        super(p_53182_);
-
-    }
 
     @Inject(method = {"getShape"}, at= @At("HEAD"), cancellable = true)
     public void getShape(BlockState bs, BlockGetter reader, BlockPos pos, CollisionContext sel, CallbackInfoReturnable<VoxelShape> cir) {
@@ -68,6 +75,11 @@ public abstract class MixinWinch extends FaceAttachedHorizontalDirectionalBlock 
                 cir.setReturnValue(_SHAPE_FLOOR_NORTH);
         }
     }
+    @Inject(method = {"appendHoverText"}, at = @At("HEAD"), cancellable = true)
+    private void appendHoverText(ItemStack itemStack, BlockGetter blockReader, List<Component> list, TooltipFlag tooltipFlag, CallbackInfo ci) {
+        list.add(new TranslatableComponent(ModLangKeyValue.NEED_RED_STONE_POWER_HOVER.getKey()));
+        ci.cancel();
+    }
 
     @Unique
     private void MH$SwitchInner(BlockState bs, CallbackInfoReturnable<VoxelShape> cir, VoxelShape shapeFloorNorth, VoxelShape shapeFloorEast, VoxelShape shapeFloorWest, VoxelShape shapeFloorSouth) {
@@ -78,4 +90,5 @@ public abstract class MixinWinch extends FaceAttachedHorizontalDirectionalBlock 
             case SOUTH -> cir.setReturnValue(shapeFloorSouth);
         }
     }
+
 }

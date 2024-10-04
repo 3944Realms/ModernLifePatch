@@ -6,17 +6,38 @@
   "mixins": [
     "block.bathroom.MixinShowerHead",
     "block.bathroom.MixinToilet",
+    "block.bedchamber.MixinNightStand",
+    "block.common.MixinArrowSlit",
+    "block.common.MixinCanvas",
+    "block.common.MixinCCTVCamera",
+    "block.common.MixinChair",
     "block.common.MixinCoffeeMug",
+    "block.common.MixinEasel",
+    "block.common.MixinFlatScreenTV",
     "block.common.MixinLightBulb",
+    "block.common.MixinMetalDuct",
+    "block.common.MixinMetalGrate",
+    "block.common.MixinPhotoCopier",
+    "block.common.MixinPrinter",
+    "block.common.MixinRadiator",
+    "block.common.MixinTileLight",
     "block.common.MixinTrashCan",
+    "block.common.MixinWallSocket",
+    "block.kitchen.MixinKitchenCabinet",
+    "block.kitchen.MixinKitchenDrawerCabinet",
     "block.kitchen.MixinKitchenSink",
     "block.kitchen.MixinMicrowave",
     "block.kitchen.MixinStove",
+    "block.lounge.MixinSofa",
     "block.redstone.MixinExtractor",
     "block.redstone.MixinPowerReceiver",
+    "block.redstone.MixinPowerTransmitter",
+    "block.redstone.MixinTurntableBlock",
     "block.redstone.MixinWinch"
   ],
   "minVersion": "0.8",
   "client": [
+    "screen.MixinPrinterScreen",
+    "screen.MixinRadiatorScreen"
   ]
 }

@@ -1,6 +1,6 @@
-package com.r3944realms.modernlifepatch.mixin.block.redstone;
+package com.r3944realms.modernlifepatch.mixin.block.common;
 
-import com.dairymoose.modernlife.blocks.PowerReceiverBlock;
+import com.dairymoose.modernlife.blocks.TileLightBlock;
 import com.r3944realms.modernlifepatch.datagen.lang.ModLangKeyValue;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
@@ -23,26 +23,18 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 import java.util.List;
 
-
-@SuppressWarnings("AddedMixinMembersNamePattern")
-@Mixin(PowerReceiverBlock.class)
-public class MixinPowerReceiver {
+@Mixin(TileLightBlock.class)
+public class MixinTileLight {
     @Unique
-    private static final VoxelShape _SHAPE_ =
-            Shapes.join(
-                    Block.box(5, 10, 5, 11, 16, 11),
-                    Block.box(0, 0, 0, 16, 5, 16),
-                    BooleanOp.OR);
+    private static final VoxelShape SHAPE_N = Shapes.join(Block.box(5, 15, 5, 11, 16, 11), Block.box(6, 14, 6, 10, 15, 10), BooleanOp.OR);
 
     @Inject(method = {"getShape"}, at= @At("HEAD"), cancellable = true)
     public void getShape(BlockState bs, BlockGetter reader, BlockPos pos, CollisionContext sel, CallbackInfoReturnable<VoxelShape> cir) {
-        cir.setReturnValue(_SHAPE_);
+        cir.setReturnValue(SHAPE_N);
     }
-
     @Inject(method = {"appendHoverText"}, at= @At("HEAD"), cancellable = true)
     public void appendHoverText(ItemStack itemStack, BlockGetter blockReader, List<Component> list, TooltipFlag tooltipFlag, CallbackInfo ci) {
-        list.add(new TranslatableComponent(ModLangKeyValue.POWER_RECEIVER_HOVER_FIRST.getKey()));
-        list.add(new TranslatableComponent(ModLangKeyValue.POWER_RECEIVER_AND_TRANSMITTER_HOVER_SECOND.getKey()));
+        list.add(new TranslatableComponent(ModLangKeyValue.NEED_RED_STONE_POWER_HOVER.getKey()));
         ci.cancel();
     }
 }

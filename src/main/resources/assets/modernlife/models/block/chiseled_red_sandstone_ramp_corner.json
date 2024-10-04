@@ -1,7 +1,0 @@
-{
-	"parent": "modernlife:block/ramp_corner",
-	"textures": {
-		"1": "block/chiseled_red_sandstone",
-		"particle": "block/chiseled_red_sandstone"
-	}
-}

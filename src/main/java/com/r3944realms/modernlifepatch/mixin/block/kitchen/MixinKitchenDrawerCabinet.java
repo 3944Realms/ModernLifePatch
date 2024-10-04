@@ -1,12 +1,14 @@
-package com.r3944realms.modernlifepatch.mixin.block.bathroom;
+package com.r3944realms.modernlifepatch.mixin.block.kitchen;
 
-import com.dairymoose.modernlife.blocks.AbstractWallBlock;
-import com.dairymoose.modernlife.blocks.ShowerHeadBlock;
+import com.dairymoose.modernlife.blocks.KitchenDrawerCabinetBlock;
+import com.dairymoose.modernlife.blocks.NightStandBlock;
 import com.dairymoose.modernlife.util.ModernLifeUtil;
+import com.r3944realms.modernlifepatch.datagen.lang.ModLangKeyValue;
+import com.r3944realms.modernlifepatch.modInterface.IContainMenu;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.EntityBlock;
+import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
@@ -16,18 +18,23 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
-@Mixin(ShowerHeadBlock.class)
-public abstract class MixinShowerHead extends AbstractWallBlock implements EntityBlock {
-    @Unique
-    private static final VoxelShape SHAPE_N = Block.box(6, 8.5, 10, 10, 12.5, 16), SHAPE_E, SHAPE_S, SHAPE_W;
-    static {
-        SHAPE_E = ModernLifeUtil.RotateVoxelShapeClockwise(SHAPE_N);
-        SHAPE_S = ModernLifeUtil.RotateVoxelShapeClockwise(SHAPE_E);
-        SHAPE_W = ModernLifeUtil.RotateVoxelShapeClockwise(SHAPE_S);
+@SuppressWarnings("AddedMixinMembersNamePattern")
+@Mixin(KitchenDrawerCabinetBlock.class)
+public class MixinKitchenDrawerCabinet extends NightStandBlock implements IContainMenu {
+    public MixinKitchenDrawerCabinet(BlockBehaviour.Properties properties) {
+        super(properties);
     }
 
-    public MixinShowerHead(Properties properties) {
-        super(properties);
+    @Override
+    public String ContainMenuLabel() {
+        return ModLangKeyValue.KITCHEN_DRAWER_CABINET_MENU_LABEL.getKey();
+    }
+    @Unique
+    private static final VoxelShape SHAPE_S = Block.box(0, 0, 0, 16, 16, 15), SHAPE_E, SHAPE_N, SHAPE_W;
+    static {
+        SHAPE_W = ModernLifeUtil.RotateVoxelShapeClockwise(SHAPE_S);
+        SHAPE_N = ModernLifeUtil.RotateVoxelShapeClockwise(SHAPE_W);
+        SHAPE_E = ModernLifeUtil.RotateVoxelShapeClockwise(SHAPE_N);
     }
 
     @Inject(method = {"getShape"}, at= @At("HEAD"), cancellable = true)

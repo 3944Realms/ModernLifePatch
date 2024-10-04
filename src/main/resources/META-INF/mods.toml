@@ -28,7 +28,7 @@ displayName="Modern Life Patch" #mandatory
 #displayURL="https://change.me.to.your.mods.homepage.example.invalid/" #optional
 # A file name (in the root of the mod JAR) containing a logo for display
 
-logoFile="mod-logo.png" #optional
+logoFile= "../resourcepacks/new_modern_life/modernlife/mod-logo.png" #optional
 # A text field displayed in the mod UI
 credits="""
 All of tetxures and models are created by BF_Meow，Do not use for other purposes without permission.

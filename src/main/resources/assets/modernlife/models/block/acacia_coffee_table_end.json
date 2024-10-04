@@ -1,8 +1,0 @@
-{
-	"parent": "modernlife:block/coffee_table_end",
-	"textures": {
-		"0": "block/acacia_planks",
-		"1": "block/acacia_log",
-		"particle": "block/acacia_log"
-	}
-}

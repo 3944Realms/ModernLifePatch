@@ -46,6 +46,7 @@ public abstract class MixinMicrowave extends StandardHorizontalBlock implements 
         SHAPE_S_O = ModernLifeUtil.RotateVoxelShapeClockwise(SHAPE_E_O);
         SHAPE_W_O = ModernLifeUtil.RotateVoxelShapeClockwise(SHAPE_S_O);
     }
+
     @Inject(method = {"getShape"}, at= @At("HEAD"), cancellable = true)
     public void getShape(BlockState bs, BlockGetter reader, BlockPos pos, CollisionContext sel, CallbackInfoReturnable<VoxelShape> cir) {
         boolean isOpen = bs.getValue(MicrowaveBlock.OPEN_DOOR);
@@ -56,7 +57,7 @@ public abstract class MixinMicrowave extends StandardHorizontalBlock implements 
             default -> cir.setReturnValue(isOpen? SHAPE_N_O : SHAPE_N);
         }
     }
-    public MixinMicrowave(Properties p_i48377_1_) {
-        super(p_i48377_1_);
+    public MixinMicrowave(Properties properties) {
+        super(properties);
     }
 }

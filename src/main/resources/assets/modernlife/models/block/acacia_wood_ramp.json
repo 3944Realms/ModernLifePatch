@@ -1,7 +1,0 @@
-{
-	"parent": "modernlife:block/ramp",
-	"textures": {
-		"1": "block/acacia_wood",
-		"particle": "block/acacia_wood"
-	}
-}

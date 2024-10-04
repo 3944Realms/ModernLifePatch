@@ -21,11 +21,13 @@ import java.util.stream.Stream;
 
 @Mixin(KitchenSinkBlock.class)
 public class MixinKitchenSink extends StandardHorizontalBlock {
-    public MixinKitchenSink(Properties p_i48377_1_) {
-        super(p_i48377_1_);
+
+    //这个居然是反的（
+    public MixinKitchenSink(Properties properties) {
+        super(properties);
     }
     @Unique
-    private static final VoxelShape SHAPE_N = Stream.of(
+    private static final VoxelShape SHAPE_S = Stream.of(
             Block.box(4, 3, 0, 12, 5, 3),
             Block.box(5, 5, 1, 6, 6, 2),
             Block.box(10, 5, 1, 11, 6, 2),
@@ -37,19 +39,20 @@ public class MixinKitchenSink extends StandardHorizontalBlock {
             Block.box(0, 0, 3, 3, 3, 13),
             Block.box(13, 0, 3, 16, 3, 13),
             Block.box(3, 0, 3, 13, 1, 13)
-    ).reduce((v1, v2) -> Shapes.join(v1, v2, BooleanOp.OR)).get(), SHAPE_E, SHAPE_S, SHAPE_W;
+    ).reduce((v1, v2) -> Shapes.join(v1, v2, BooleanOp.OR)).get(), SHAPE_E, SHAPE_N, SHAPE_W;
     static {
-        SHAPE_E = ModernLifeUtil.RotateVoxelShapeClockwise(SHAPE_N);
-        SHAPE_S = ModernLifeUtil.RotateVoxelShapeClockwise(SHAPE_E);
         SHAPE_W = ModernLifeUtil.RotateVoxelShapeClockwise(SHAPE_S);
+        SHAPE_N = ModernLifeUtil.RotateVoxelShapeClockwise(SHAPE_W);
+        SHAPE_E = ModernLifeUtil.RotateVoxelShapeClockwise(SHAPE_N);
     }
+
     @Inject(method = {"getShape"}, at= @At("HEAD"), cancellable = true)
     public void getShape(BlockState bs, BlockGetter reader, BlockPos pos, CollisionContext sel, CallbackInfoReturnable<VoxelShape> cir) {
         switch (bs.getValue(FACING)) {
-            case SOUTH -> cir.setReturnValue(SHAPE_N);
-            case EAST -> cir.setReturnValue(SHAPE_W);
-            case WEST -> cir.setReturnValue(SHAPE_E);
-            default -> cir.setReturnValue(SHAPE_S);
+            case SOUTH -> cir.setReturnValue(SHAPE_S);
+            case EAST -> cir.setReturnValue(SHAPE_E);
+            case WEST -> cir.setReturnValue(SHAPE_W);
+            default -> cir.setReturnValue(SHAPE_N);
         }
     }
 }

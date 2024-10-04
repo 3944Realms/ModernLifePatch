@@ -38,8 +38,8 @@ public abstract class MixinToilet extends StandardHorizontalBlock implements Sim
         SHAPE_N = ModernLifeUtil.RotateVoxelShapeClockwise(SHAPE_W);
         SHAPE_E = ModernLifeUtil.RotateVoxelShapeClockwise(SHAPE_N);
     }
-    public MixinToilet(Properties p_i48377_1_) {
-        super(p_i48377_1_);
+    public MixinToilet(Properties properties) {
+        super(properties);
     }
     @Inject(method = {"getShape"}, at= @At("HEAD"), cancellable = true)
     public void getShape(BlockState bs, BlockGetter reader, BlockPos pos, CollisionContext sel, CallbackInfoReturnable<VoxelShape> cir) {
@@ -50,5 +50,6 @@ public abstract class MixinToilet extends StandardHorizontalBlock implements Sim
             default -> cir.setReturnValue(SHAPE_N);
         }
     }
+
 
 }

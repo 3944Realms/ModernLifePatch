@@ -1,8 +1,0 @@
-{
-	"parent": "modernlife:block/radiator",
-	"texture_size": [32, 32],
-	"textures": {
-		"0": "modernlife:block/steam_radiator_low",
-		"particle": "modernlife:block/steam_radiator_low"
-	}
-}
